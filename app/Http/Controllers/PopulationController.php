@@ -15,7 +15,7 @@ class PopulationController extends Controller
      */
     public function index()
     {
-        $population = Population::orderBy('id', 'DESC')->get();
+        $population = Population::orderBy('total', 'DESC')->get();
         $res = [
             'message' => 'List population order by id',
             'data' => $population
