@@ -6,7 +6,6 @@ use App\Models\FoodRecommend;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\QueryException; // QueryException
-use Illuminate\Support\Facades\Validator; // !!! Validtor
 
 class FoodRecommendController extends Controller
 {
@@ -44,7 +43,17 @@ class FoodRecommendController extends Controller
      */
     public function store(Request $request)
     {
-        
+        try{
+            $foodRecommend = FoodRecommend::create($request->all());
+            $res = [
+                'message'=> 'FoodRecommend created',
+                'data' => $foodRecommend
+            ];
+            // HTTP CODE 201
+            return response()->json($res, Response::HTTP_CREATED);
+        }catch(QueryException $e){
+            return response()->json(['message'=>'Failed ' . $e->errorInfo]);
+        }
     }
 
     /**
