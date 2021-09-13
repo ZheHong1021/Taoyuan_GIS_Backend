@@ -10,4 +10,9 @@ class ShoppingArea extends Model
     use HasFactory;
     protected $table = 'shopping_area';
     protected $fillable = ['name', 'latitude', 'longitude', 'description', 'organization', 'transportation'];
+       // turn off both 
+       public $timestamps = false;
+
+       // turn off only updated_at
+       const UPDATED_AT = false;
 }
