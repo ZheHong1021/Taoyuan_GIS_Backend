@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ShoppingArea;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Database\QueryException; // QueryException
 
 class ShoppingAreaController extends Controller
 {
@@ -42,7 +43,17 @@ class ShoppingAreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $shopping = ShoppingArea::create($request->all());
+            $res = [
+                'message'=> 'Population created',
+                'data' => $shopping
+            ];
+            // HTTP CODE 201
+            return response()->json($res, Response::HTTP_CREATED);
+        }catch(QueryException $e){
+            return response()->json(['message'=>'Failed ' . $e->errorInfo]);
+        }
     }
 
     /**
