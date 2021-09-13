@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class FoodRecommend extends Model
 {
     use HasFactory;
-    protected $table = 'food_recommend';
+    protected $table = 'food_recommends';
     protected $fillable = ['name', 'phone', 'address', 'latitude', 'longitude'];
     // turn off both 
     public $timestamps = false;
