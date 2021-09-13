@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/population', [PopulationController::class, 'index']);
 Route::get('/food_recommend', [FoodRecommendController::class, 'index']);
+Route::post('/food_recommend', [FoodRecommendController::class, 'store']);
 
 
 Route::get('/shopping', [ShoppingAreaController::class, 'index']);

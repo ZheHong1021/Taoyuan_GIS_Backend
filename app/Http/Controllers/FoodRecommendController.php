@@ -18,7 +18,7 @@ class FoodRecommendController extends Controller
     {
         $foodRecommend = FoodRecommend::orderBy('id')->get();
         $res = [
-            'message' => 'List population order by id',
+            'message' => 'List food_recommend order by id',
             'data' => $foodRecommend
         ];
 
