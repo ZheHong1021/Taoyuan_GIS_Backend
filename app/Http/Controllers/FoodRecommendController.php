@@ -6,6 +6,7 @@ use App\Models\FoodRecommend;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\QueryException; // QueryException
+use Illuminate\Support\Facades\DB;
 
 class FoodRecommendController extends Controller
 {
