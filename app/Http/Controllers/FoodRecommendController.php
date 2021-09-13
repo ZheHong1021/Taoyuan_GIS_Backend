@@ -44,7 +44,7 @@ class FoodRecommendController extends Controller
     public function store(Request $request)
     {
         try{
-            $foodRecommend = FoodRecommend::create($request->all());
+            $foodRecommend = FoodRecommend::insert($request->all());
             $res = [
                 'message'=> 'FoodRecommend created',
                 'data' => $foodRecommend
