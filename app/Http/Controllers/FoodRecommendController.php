@@ -44,10 +44,10 @@ class FoodRecommendController extends Controller
     public function store(Request $request)
     {
         try{
-            $foodRecommend = FoodRecommend::insert($request->all());
+            // $foodRecommend = FoodRecommend::create($request->all());
+            DB::table('food_recommends')->insert($request->all());
             $res = [
                 'message'=> 'FoodRecommend created',
-                'data' => $foodRecommend
             ];
             // HTTP CODE 201
             return response()->json($res, Response::HTTP_CREATED);
