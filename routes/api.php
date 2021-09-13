@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/population', [PopulationController::class, 'index']);
-Route::post('/population', [TransactionController::class, 'store']);
+Route::post('/population', [PopulationController::class, 'store']);
 
 
 Route::get('/shopping', [ShoppingAreaController::class, 'index']);
