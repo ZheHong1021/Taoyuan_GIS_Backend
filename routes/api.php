@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodRecommendController;
 use App\Http\Controllers\PopulationController;
 use App\Http\Controllers\ShoppingAreaController;
 use Illuminate\Http\Request;
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/population', [PopulationController::class, 'index']);
+Route::get('/food_recommend', [FoodRecommendController::class, 'index']);
 
 
 Route::get('/shopping', [ShoppingAreaController::class, 'index']);
